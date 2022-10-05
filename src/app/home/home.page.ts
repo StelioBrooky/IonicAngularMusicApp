@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Howl } from 'howler';
 
 
@@ -25,7 +26,7 @@ howler: Howl = null;
 activeTrack: Track = null;
 playing: boolean = false;
 
-  constructor() {}
+  constructor(private route: Router) {}
 
   start(track: Track) {
     if (this.howler) {
@@ -57,7 +58,10 @@ playPause(status) {
       this.howler.play();
     }
 
+  }
 
+  loginNav(){
+    this.route.navigate(['/login']);
   }
 
 }
