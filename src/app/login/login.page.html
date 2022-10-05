@@ -5,5 +5,10 @@
 </ion-header>
 
 <ion-content>
+  <ion-input placeholder="Username" [(ngModel)]="currentUser.email"></ion-input>
+  <ion-input placeholder="Password" [(ngModel)]="currentUser.password" type="password"></ion-input>
+  
   <ion-button (click)="homeNav()">Login</ion-button>
+  <ion-button (click)="signUpNav()">Sign Up</ion-button>
+
 </ion-content>
