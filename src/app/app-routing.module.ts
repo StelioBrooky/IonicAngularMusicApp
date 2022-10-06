@@ -34,6 +34,14 @@ const routes: Routes = [
     path: 'witch',
     loadChildren: () => import('./witch/witch.module').then( m => m.WitchPageModule)
   },
+  {
+    path: 'kotahitanga',
+    loadChildren: () => import('./kotahitanga/kotahitanga.module').then( m => m.KotahitangaPageModule)
+  },
+  {
+    path: 'moving',
+    loadChildren: () => import('./moving/moving.module').then( m => m.MovingPageModule)
+  },
 
 ];
 

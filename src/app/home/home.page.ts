@@ -40,12 +40,12 @@ export class HomePage {
   },
   {
     name: 'Kotahitanga',
-    path: 'assets/mp3/Coconut.mp3',
+    path: 'assets/mp3/Kotahitanga.mp3',
     nav: 'kotahitanga'
   },
   {
     name: 'Keep On Moving!',
-    path: 'assets/mp3/Coconut.mp3',
+    path: 'assets/mp3/KeepOnMovin.mp3',
     nav: 'moving'
   },
 ];

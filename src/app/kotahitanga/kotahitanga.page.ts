@@ -9,16 +9,16 @@ export interface Track {
 }
 
 @Component({
-  selector: 'app-coconut',
-  templateUrl: './coconut.page.html',
-  styleUrls: ['./coconut.page.scss'],
+  selector: 'app-kotahitanga',
+  templateUrl: './kotahitanga.page.html',
+  styleUrls: ['./kotahitanga.page.scss'],
 })
-export class CoconutPage implements OnInit {
+export class KotahitangaPage implements OnInit {
 
   song: Track = {
-    name: 'Coconut',
-    path: 'assets/mp3/Coconut.mp3',
-    nav: 'coconut'
+    name: 'Kotahitanga',
+    path: 'assets/mp3/Kotahitanga.mp3',
+    nav: 'kotahitanga'
   }
 
   howler: Howl = null;
