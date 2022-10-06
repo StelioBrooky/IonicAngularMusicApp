@@ -25,17 +25,17 @@ export class HomePage {
   },
   {
     name: 'Who Let The Dogs Out?',
-    path: 'assets/mp3/WhoLetsTheDogsOut.mp3',
+    path: 'assets/mp3/WhoLetTheDogsOut.mp3',
     nav: 'dogs'
   },
   {
     name: 'Witch Doctor',
-    path: 'assets/mp3/Coconut.mp3',
+    path: 'assets/mp3/WitchDoctor.mp3',
     nav: 'witch'
   },
   {
     name: 'Candyman',
-    path: 'assets/mp3/Coconut.mp3',
+    path: 'assets/mp3/CandyMan.mp3',
     nav: 'candyman'
   },
   {

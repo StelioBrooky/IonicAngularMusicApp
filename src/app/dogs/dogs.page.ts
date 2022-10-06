@@ -69,6 +69,8 @@ playPause(status) {
   }
 
   homeNav(){
+    this.activeTrack = null;
+    this.howler.stop();
     this.route.navigate(['/home']);
   }
 
