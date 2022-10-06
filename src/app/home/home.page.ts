@@ -25,7 +25,7 @@ export class HomePage {
   },
   {
     name: 'Who Let The Dogs Out?',
-    path: 'assets/mp3/Coconut.mp3',
+    path: 'assets/mp3/WhoLetsTheDogsOut.mp3',
     nav: 'dogs'
   },
   {

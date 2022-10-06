@@ -22,6 +22,10 @@ const routes: Routes = [
     path: 'coconut',
     loadChildren: () => import('./coconut/coconut.module').then( m => m.CoconutPageModule)
   },
+  {
+    path: 'dogs',
+    loadChildren: () => import('./dogs/dogs.module').then( m => m.DogsPageModule)
+  },
 
 ];
 
