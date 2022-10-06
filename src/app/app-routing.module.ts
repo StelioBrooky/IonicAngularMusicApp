@@ -18,6 +18,10 @@ const routes: Routes = [
     path: 'bluetooth',
     loadChildren: () => import('./bluetooth/bluetooth.module').then( m => m.BluetoothPageModule)
   },
+  {
+    path: 'coconut',
+    loadChildren: () => import('./coconut/coconut.module').then( m => m.CoconutPageModule)
+  },
 
 ];
 

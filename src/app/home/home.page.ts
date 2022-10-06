@@ -7,6 +7,7 @@ import { Howl } from 'howler';
 export interface Track {
   name: string;
   path: string;
+  nav: string;
 }
 
 @Component({
@@ -18,7 +19,33 @@ export interface Track {
 export class HomePage {
   playlists: Track[] = [{
     name: 'Coconut',
-    path: 'assets/mp3/Coconut.mp3'
+    path: 'assets/mp3/Coconut.mp3',
+    nav: 'coconut'
+  },
+  {
+    name: 'Who Let The Dogs Out?',
+    path: 'assets/mp3/Coconut.mp3',
+    nav: 'dogs'
+  },
+  {
+    name: 'Witch Doctor',
+    path: 'assets/mp3/Coconut.mp3',
+    nav: 'witch'
+  },
+  {
+    name: 'Candyman',
+    path: 'assets/mp3/Coconut.mp3',
+    nav: 'candyman'
+  },
+  {
+    name: 'Kotahitanga',
+    path: 'assets/mp3/Coconut.mp3',
+    nav: 'kotahitanga'
+  },
+  {
+    name: 'Keep On Moving!',
+    path: 'assets/mp3/Coconut.mp3',
+    nav: 'moving'
   },
 ]
 
@@ -66,5 +93,8 @@ playPause(status) {
   }
   bluetoothNav(){
     this.route.navigate(['/bluetooth']);
+  }
+  songNav(songNav){
+    this.route.navigate(['/'+songNav]);
   }
 }

@@ -1,14 +1,21 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Music Player
+      JumpJamz
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content >
+
+  <!--Have a heading that asks the user to select a song or connect to bluetooth-->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Select a song or connect to bluetooth</ion-card-title>
+    </ion-card-header>
+  </ion-card>
   <ion-list>
-      <ion-item *ngFor="let track of playlists" (click)="start(track)">
+      <ion-item *ngFor="let track of playlists" (click)="songNav(track.nav)">
         <ion-label>{{track.name}}</ion-label>
       </ion-item>
       
@@ -17,5 +24,6 @@
   <ion-button (click)="playPause(false)" *ngIf="!playing" >Play</ion-button>
   <ion-button (click)="loginNav()">Login</ion-button>
   <ion-button (click)="bluetoothNav()">Bluetooth</ion-button>
+ 
 </ion-content>
 
