@@ -16,27 +16,6 @@
   <ion-button (click)="playPause(true)" *ngIf="playing" >Pause</ion-button>
   <ion-button (click)="playPause(false)" *ngIf="!playing" >Play</ion-button>
   <ion-button (click)="loginNav()">Login</ion-button>
-  <ion-list padding>
-    <ion-button expand="block"
-                (click)="startScanning()">scan</ion-button>
-    <ion-list-header>
-        Paired Devices
-    </ion-list-header>
-    <ion-item *ngFor="let device of pairedDevices">
-        {{device.name}}
-    </ion-item>
-    <ion-button expand="block"
-                (click)="disconnect()">Disconnect</ion-button>
-    <ion-list-header>
-        availlable Devices
-    </ion-list-header>
-    <ion-item *ngFor='let device of unpairedDevices'>
-        <span (click)="selectDevice(device.id)">
-            {{device.name || device.address}}
-        </span>
-    </ion-item>
-    <ion-spinner name="crescent"
-                 *ngIf="gettingDevices"></ion-spinner>
-</ion-list>
+  <ion-button (click)="bluetoothNav()">Bluetooth</ion-button>
 </ion-content>
 
