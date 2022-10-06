@@ -1,9 +1,17 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>coconut</ion-title>
+    <ion-title>JumpJamz</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+    <!--Have a heading that asks the user to select a song or connect to bluetooth-->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Coconut</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+    <ion-button (click)="playPause(true)" *ngIf="playing" >Pause</ion-button>
+    <ion-button (click)="playPause(false)" *ngIf="!playing" >Play</ion-button>
+    <ion-button (click)="homeNav()">Back</ion-button>
 </ion-content>
