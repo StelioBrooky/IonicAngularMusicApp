@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BluetoothSerial } from '@ionic-native/bluetooth-serial/ngx';
 import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bluetooth',
@@ -9,7 +10,7 @@ import { AlertController } from '@ionic/angular';
 })
 export class BluetoothPage implements OnInit  {
 
-  constructor(private bluetoothSerial: BluetoothSerial, private alertController: AlertController) {
+  constructor(private route: Router,private bluetoothSerial: BluetoothSerial, private alertController: AlertController) {
     bluetoothSerial.enable(); 
   }
 
@@ -114,5 +115,8 @@ export class BluetoothPage implements OnInit  {
       ]
     });
     await alert.present();
+  }
+  async homeNav(){
+    this.route.navigate(['home']);
   }
 }
