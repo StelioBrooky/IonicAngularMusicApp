@@ -1,14 +1,29 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <div style="align-items: center; justify-content: center;">
+    <ion-title>Welcome to Jump Jamz!</ion-title>
+    </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-input placeholder="Username" [(ngModel)]="currentUser.email"></ion-input>
-  <ion-input placeholder="Password" [(ngModel)]="currentUser.password" type="password"></ion-input>
-  
-  <ion-button (click)="homeNav()">Login</ion-button>
-  <ion-button (click)="signUpNav()">Sign Up</ion-button>
 
+  
+  <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
+    <!--display the logo.png image-->
+    
+  <ion-card>
+    <ion-card-header>
+      <img src="assets/icon/logo.png"/>
+      <ion-card-title>Log in or Sign up!</ion-card-title>
+      <ion-input expand="block" font-size = 2.8rem placeholder="Username" [(ngModel)]="currentUser.email"></ion-input>
+      <ion-input expand="block" font-size = 2.8rem placeholder="Password" [(ngModel)]="currentUser.password" type="password"></ion-input>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-button expand="block" (click)="homeNav()">Login</ion-button>
+      <ion-button expand="block" (click)="signUpNav()">Sign Up</ion-button>
+    </ion-card-content>
+  </ion-card>
+</div>
 </ion-content>

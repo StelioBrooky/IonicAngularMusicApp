@@ -24,3 +24,18 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+
+ion-toolbar {
+    --background: #327dff;
+    //centre the text
+    --justify-content: center;
+}
+//ion backgrond colour change to black
+ion-content{
+    --ion-background-color: #313131;
+    //header colour change
+    --ion-header-background: #00bbff;
+    //center the header text
+}
