@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Howl } from 'howler';
 
 //import { AngularFireDatabase } from '@angular/fire/compat/database'; // Test after making database. Add public aFDB: AngularFireDatabase, to constructor too
 import { AngularFireStorage } from '@angular/fire/compat/storage'; // Test after setting up storage.
@@ -59,9 +58,6 @@ export class HomePage {
   }
   
 
-  loginNav(){
-    this.route.navigate(['/login']);
-  }
   bluetoothNav(){
     this.route.navigate(['/bluetooth']);
   }
