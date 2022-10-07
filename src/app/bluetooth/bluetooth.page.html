@@ -17,7 +17,7 @@
     <ion-button expand="block"
                 (click)="disconnect()">Disconnect</ion-button>
     <ion-list-header>
-        availlable Devices
+        Availlable Devices
     </ion-list-header>
     <ion-item *ngFor='let device of unpairedDevices'>
         <span (click)="selectDevice(device.id)">
