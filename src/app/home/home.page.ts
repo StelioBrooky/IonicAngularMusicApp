@@ -4,7 +4,6 @@ import { Howl } from 'howler';
 
 //import { AngularFireDatabase } from '@angular/fire/compat/database'; // Test after making database. Add public aFDB: AngularFireDatabase, to constructor too
 import { AngularFireStorage } from '@angular/fire/compat/storage'; // Test after setting up storage.
-import { File, FileReader } from '@ionic-native/file';
 
 export interface Track {
   name: string;
@@ -82,36 +81,9 @@ export class HomePage {
   addToStorage(){ // Upload tracks to storage
     // storage
     for (let i of this.playlists) {
-      let filename = '';
-      if (i.path.includes('Coconut')){
-        filename = 'Coconut.mp3';
-      }
-      if (i.path.includes('WhoLetTheDogsOut')){
-        filename = 'WhoLetTheDogsOut.mp3';
-      }
-      if (i.path.includes('WitchDoctor')){
-        filename = 'WitchDoctor.mp3';
-      }
-      if (i.path.includes('CandyMan')){
-        filename = 'CandyMan.mp3';
-      }
-      if (i.path.includes('Kotahitanga')){
-        filename = 'Kotahitanga.mp3';
-      }
-      if (i.path.includes('KeepOnMovin')){
-        filename = 'KeepOnMovin.mp3';
-      }
-
-      //const file = File.readAsText(i.path, filename);
-      const file = File.readAsDataURL(i.path, filename);
-      //const reader = new FileReader();
-      //reader.readAsDataURL(i.path, filename);
-      //const file = i.path;
-      //const file = File.getFile(i.path, filename);
       //this.aFS.ref('music/' + i.name).put();
       //this.aFS.upload('music/' + i.name, { type: 'audio/mp3' });
-      //this.aFS.upload('music/' + i.name, i.path, {contentType: 'audio/mp3'} );
-      this.aFS.upload('music/' + i.name, file, {contentType: 'audio/mp3'} );
+      this.aFS.upload('music/' + i.name, i.path, {contentType: 'audio/mp3'} );
     }
   }
 }
