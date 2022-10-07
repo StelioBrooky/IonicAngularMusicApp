@@ -83,7 +83,7 @@ export class HomePage {
     for (let i of this.playlists) {
       //this.aFS.ref('music/' + i.name).put();
       //this.aFS.upload('music/' + i.name, { type: 'audio/mp3' });
-      this.aFS.upload('music/' + i.name, i.path);
+      this.aFS.upload('music/' + i.name, i.path, {contentType: 'audio/mp3'} );
     }
   }
 }
