@@ -15,14 +15,18 @@ export interface Track {
 })
 export class MovingPage implements OnInit {
 
+  //The track we want to play
   song: Track = {
     name: 'Keep On Moving!',
     path: 'assets/mp3/KeepOnMovin.mp3',
     nav: 'moving'
   }
 
+  //this is the object that will play our track
   howler: Howl = null;
+  //this is the object that will hold our active track
   activeTrack: Track = null;
+  //this is the variable that will hold the status of our track (playing/paused)
   playing: boolean = false;
 
   constructor(private route: Router ) { 
@@ -32,10 +36,12 @@ export class MovingPage implements OnInit {
   }
 
   start() {
+    //if we are playing a track, stop it
     if (this.howler) {
       this.howler.stop();
     }
 
+    //set the howler object to the track we want to play
     this.howler = new Howl({
       src: [this.song.path],
       html5: true,

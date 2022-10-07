@@ -15,14 +15,18 @@ export interface Track {
 })
 export class KotahitangaPage implements OnInit {
 
+  //the track we want to play
   song: Track = {
     name: 'Kotahitanga',
     path: 'assets/mp3/Kotahitanga.mp3',
     nav: 'kotahitanga'
   }
 
+  //this is the object that will play our track
   howler: Howl = null;
+  //this is the object that will hold our active track
   activeTrack: Track = null;
+  //this is the variable that will hold the status of our track (playing/paused)
   playing: boolean = false;
 
   constructor(private route: Router ) { 
@@ -32,10 +36,12 @@ export class KotahitangaPage implements OnInit {
   }
 
   start() {
+    //if we are playing a track, stop it
     if (this.howler) {
       this.howler.stop();
     }
 
+    //set the howler object to the track we want to play
     this.howler = new Howl({
       src: [this.song.path],
       html5: true,

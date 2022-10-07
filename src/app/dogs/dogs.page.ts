@@ -15,14 +15,18 @@ export interface Track {
 })
 export class DogsPage implements OnInit {
 
+  //Song we want to play
   song: Track = {
     name: 'Who Let The Dogs Out?',
     path: 'assets/mp3/WhoLetTheDogsOut.mp3',
     nav: 'dogs'
   }
 
+  //this is the object that will play our track
   howler: Howl = null;
+  //this is the object that will hold our active track
   activeTrack: Track = null;
+  //this is the variable that will hold the status of our track (playing/paused)
   playing: boolean = false;
 
   constructor(private route: Router ) { 

@@ -1,16 +1,14 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-
-//import { AngularFireDatabase } from '@angular/fire/compat/database'; // Test after making database. Add public aFDB: AngularFireDatabase, to constructor too
-import { AngularFireStorage } from '@angular/fire/compat/storage'; // Test after setting up storage.
-import { File, FileReader } from '@ionic-native/file';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { File } from '@ionic-native/file';
 
 export interface Track {
   name: string;
   path: string;
   nav: string;
 }
-//help us we are going insane
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -18,6 +16,7 @@ export interface Track {
 })
 
 export class HomePage {
+  //list of songs
   playlists: Track[] = [{
     name: 'Coconut',
     path: 'assets/mp3/Coconut.mp3',
@@ -53,7 +52,6 @@ export class HomePage {
 
 
   constructor(private route: Router, public aFS: AngularFireStorage){
-    //this.addToDB();
     this.addToStorage();
   }
   
@@ -65,16 +63,7 @@ export class HomePage {
     this.route.navigate(['/'+songNav]);
   }
 
-  /*addToDB(){
-    // database
-    for (let i of this.playlists) {
-      this.aFDB.object('music/' + i.name).set({
-        songname: i.name,
-        songpath: i.nav,
-      });
-    }
-  }*/
-
+  
   addToStorage(){ // Upload tracks to storage
     // storage
     for (let i of this.playlists) {
@@ -98,15 +87,8 @@ export class HomePage {
         filename = 'KeepOnMovin.mp3';
       }
 
-      //const file = File.readAsText(i.path, filename);
+      
       const file = File.readAsDataURL(i.path, filename);
-      //const reader = new FileReader();
-      //reader.readAsDataURL(i.path, filename);
-      //const file = i.path;
-      //const file = File.getFile(i.path, filename);
-      //this.aFS.ref('music/' + i.name).put();
-      //this.aFS.upload('music/' + i.name, { type: 'audio/mp3' });
-      //this.aFS.upload('music/' + i.name, i.path, {contentType: 'audio/mp3'} );
       this.aFS.upload('music/' + i.name, file, {contentType: 'audio/mp3'} );
     }
   }

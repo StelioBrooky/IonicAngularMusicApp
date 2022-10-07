@@ -24,10 +24,12 @@ export class BluetoothPage implements OnInit  {
   
   
   startScanning() {
+    //Scan for devices
     this.pairedDevices = null;
     this.unpairedDevices = null;
     this.gettingDevices = true;
     const unPair = [];
+    //Search for unpaired devices
     this.bluetoothSerial.discoverUnpaired().then((success) => {
       success.forEach((value, key) => {
         var exists = false;
@@ -63,7 +65,7 @@ export class BluetoothPage implements OnInit  {
   }
   
   async selectDevice(id: any) {
-  
+  //select device and connect
     const alert = await this.alertController.create({
       header: 'Connect',
       message: 'Do you want to connect with?',
@@ -87,6 +89,7 @@ export class BluetoothPage implements OnInit  {
   }
   
   deviceConnected() {
+    //confirm device is connected
     this.bluetoothSerial.isConnected().then(success => {
       alert('Connected Successfullly');
     }, error => {
@@ -95,6 +98,7 @@ export class BluetoothPage implements OnInit  {
   }
   
   async disconnect() {
+    // check if the user wants to disconnect
     const alert = await this.alertController.create({
       header: 'Disconnect?',
       message: 'Do you want to Disconnect?',
