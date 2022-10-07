@@ -11,7 +11,7 @@ export interface Track {
   path: string;
   nav: string;
 }
-
+//help us we are going insane
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
