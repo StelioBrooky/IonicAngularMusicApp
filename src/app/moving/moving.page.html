@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>JumpJamz</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button (click)="homeNav()"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -10,8 +13,28 @@
       <ion-card-header>
         <ion-card-title>Keep On Moving!</ion-card-title>
       </ion-card-header>
-    </ion-card>
-    <ion-button (click)="playPause(true)" *ngIf="playing" >Pause</ion-button>
-    <ion-button (click)="playPause(false)" *ngIf="!playing" >Play</ion-button>
-    <ion-button (click)="homeNav()">Back</ion-button>
-</ion-content>
+      <ion-card-content>
+        <img src="assets/photos/kotahitanga/k1.png"/>
+        <img src="assets/photos/kotahitanga/k2.png"/>
+        <img src="assets/photos/kotahitanga/k3.png"/>
+        <img src="assets/photos/kotahitanga/k4.png"/>
+        <img src="assets/photos/kotahitanga/k5.png"/>
+      </ion-card-content>
+      </ion-card>
+  </ion-content>
+  
+  <ion-footer>
+    <ion-toolbar>
+      <ion-row>
+        <ion-col class = "ion-text-center">
+          <ion-button fill = "clear" (click)="playPause(true)" color = "light" *ngIf="playing" >
+            <ion-icon slot = "icon-only" name="pause"></ion-icon>
+          </ion-button>
+          <ion-button fill = "clear" (click)="playPause(false)" color = "light" *ngIf="!playing" >
+            <ion-icon slot = "icon-only" name="play"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-toolbar>
+  </ion-footer>
+  
